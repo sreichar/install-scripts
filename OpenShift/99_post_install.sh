@@ -64,6 +64,11 @@ apply_mc(){
   done
 }
 
+function start_autoapprover() {
+  oc create -f  ${POSTINSTALL_ASSETS_DIR}/autoapprover.yaml
+}
+
+start_autoapprover
 ./add-machine-ips.sh
 create_bridge
 apply_mc
